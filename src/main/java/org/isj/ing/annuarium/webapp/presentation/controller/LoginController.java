@@ -1,5 +1,6 @@
 package org.isj.ing.annuarium.webapp.presentation.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 
@@ -10,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,17 +22,17 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value={"/login"}, method = RequestMethod.GET)
-	public ModelAndView login(){
-		final ModelAndView modelAndView = new ModelAndView();
+	@GetMapping(value={"/login"})
+	public String login(HttpSession session){
+
 		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		final User user = userService.findUserByEmail(auth.getName());
 		if(user!= null )
-			modelAndView.addObject("userName", user.getName() + " " + user.getLastName());
+			session.setAttribute("userName", user.getName() + " " + user.getLastName());
 		else
-			modelAndView.addObject("userName", "");
-		modelAndView.setViewName("login");
-		return modelAndView;
+			session.setAttribute("userName","");
+
+		return "login";
 	}
 
 

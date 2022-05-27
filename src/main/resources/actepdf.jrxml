@@ -1,237 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="520" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c88d071-e5f9-4150-bcc3-1b98f62d113b">
-
-    <field name="dateNaissance" class="java.lang.String">
-    </field>
-    <field name="lieuNaissance" class="java.lang.String">
-    </field>
-    <field name="nom" class="java.lang.String">
-    </field>
-    <field name="nomPrenomMere" class="java.lang.String">
-    </field>
-    <field name="nomPrenomPere" class="java.lang.String">
-    </field>
-    <field name="numero" class="java.lang.String">
-    </field>
-    <field name="prenom" class="java.lang.String">
-    </field>
-
-    <background>
-        <band splitType="Stretch"/>
-    </background>
-    <title>
-        <band height="149" splitType="Stretch">
-            <staticText>
-                <reportElement x="0" y="0" width="210" height="20" uuid="1cee0595-9b49-4dfe-9e17-e3f984460452"/>
-                <textElement>
-                    <font fontName="SansSerif" size="16"/>
-                </textElement>
-                <text><![CDATA[CONSULAT GENERAL]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="355" y="0" width="200" height="20" uuid="73fff547-5822-4a85-910a-8a25b2278f29"/>
-                <textElement>
-                    <font fontName="SansSerif" size="16"/>
-                </textElement>
-                <text><![CDATA[CONSULATE GENERAL]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="0" y="20" width="259" height="26" uuid="a539c91a-d62d-416a-9307-28d6596bb0af"/>
-                <textElement>
-                    <font fontName="SansSerif" size="16"/>
-                </textElement>
-                <text><![CDATA[REPUBLIQUE DU CAMEROUN]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="325" y="20" width="230" height="26" uuid="d10a8358-1e28-4b6c-a199-e5d3462a3e92"/>
-                <textElement>
-                    <font fontName="SansSerif" size="16"/>
-                </textElement>
-                <text><![CDATA[REPUBLIC OF CAMEROUN]]></text>
-            </staticText>
-            <image>
-                <reportElement x="250" y="0" width="50" height="46" uuid="4b0271db-3213-4ec0-87d8-a01b57a01820"/>
-                <imageExpression><![CDATA["C:/Users/riche/Desktop/INGE3/logo cam.png"]]></imageExpression>
-            </image>
-            <staticText>
-                <reportElement x="177" y="80" width="236" height="30" uuid="f1cac860-be1e-4cd0-8305-d6815b0e38f0"/>
-                <textElement>
-                    <font size="22" isBold="true"/>
-                </textElement>
-                <text><![CDATA[ACTE DE NAISSANCE ]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="420" y="91" width="19" height="19" uuid="e24dbd5c-85d1-4e9f-99cd-e7a2933e85eb"/>
-                <text><![CDATA[N : ]]></text>
-            </staticText>
-            <line>
-                <reportElement x="439" y="100" width="80" height="1" uuid="2ed3d661-919b-4043-91e7-39dea194e60f"/>
-            </line>
-            <textField>
-                <reportElement x="448" y="87" width="69" height="19" uuid="d921faed-1f17-4dd4-836a-8f26fe68afea">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8fd6f890-e65b-4069-bd6c-41e95eed599c"/>
-                </reportElement>
-                <textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="0" y="128" width="38" height="21" uuid="bf2c9fac-4e8b-4d0d-a52c-f3fdabd0bd10">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2028b5f6-4c96-47d3-ace3-aa6b251f8d6e"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[nom]]></text>
-            </staticText>
-            <line>
-                <reportElement x="38" y="141" width="515" height="1" uuid="3f3efce3-7a03-4241-b3d9-c31c56cf8aa6"/>
-            </line>
-            <textField>
-                <reportElement x="50" y="124" width="350" height="18" uuid="dcca673b-f173-4d81-af71-3acfc46a8b98">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2028b5f6-4c96-47d3-ace3-aa6b251f8d6e"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
-            </textField>
-        </band>
-    </title>
-    <pageHeader>
-        <band height="50" splitType="Stretch"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="52" splitType="Stretch">
-            <staticText>
-                <reportElement x="0" y="-19" width="44" height="19" uuid="e6a12fbc-97ee-44ba-93a6-c5903b89bcb4">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd702f4e-3280-41d2-9a32-02f124c6e166"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[prenom]]></text>
-            </staticText>
-            <line>
-                <reportElement x="45" y="0" width="509" height="1" uuid="b526a31f-df34-420c-bc08-32cb05e4deb0"/>
-            </line>
-            <textField>
-                <reportElement x="50" y="-18" width="378" height="19" uuid="93229ff5-ba27-455d-954d-fc28b2ae747a">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd702f4e-3280-41d2-9a32-02f124c6e166"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="0" y="32" width="100" height="20" uuid="22f8689f-7fc5-49a0-9c67-7ae603b2690e">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="612b83bf-0597-4326-8783-9db19b74c811"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[date de naissance]]></text>
-            </staticText>
-        </band>
-    </columnHeader>
-    <detail>
-        <band height="93" splitType="Stretch">
-            <staticText>
-                <reportElement x="0" y="17" width="100" height="20" uuid="c8cb5a2a-ef4f-4400-a4cb-28b0c6adcbbb">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f12cfc85-48ba-484f-b8a3-0fb259a58525"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[lieu de naissance]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="0" y="75" width="129" height="16" uuid="2cef230c-3379-4f71-b7f8-a5fabb265d42">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffcb885-8b40-4660-bbd3-d1d3eb3f5af2"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[nom et prenom du pere]]></text>
-            </staticText>
-            <line>
-                <reportElement x="100" y="-1" width="453" height="1" uuid="25a4c78e-94de-4380-92af-e51d4a71cc8a"/>
-            </line>
-            <textField>
-                <reportElement x="109" y="-20" width="330" height="19" uuid="8988476b-fbad-4388-9065-be28acb99013">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="612b83bf-0597-4326-8783-9db19b74c811"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{dateNaissance}]]></textFieldExpression>
-            </textField>
-            <line>
-                <reportElement x="100" y="37" width="455" height="1" uuid="b2eacf22-2e6e-4e2a-bf39-85e2d1458548"/>
-            </line>
-            <textField>
-                <reportElement x="110" y="17" width="120" height="19" uuid="d81eb69f-c3b6-4bc4-a925-fb116004fe5c">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f12cfc85-48ba-484f-b8a3-0fb259a58525"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{lieuNaissance}]]></textFieldExpression>
-            </textField>
-            <line>
-                <reportElement x="130" y="91" width="424" height="1" uuid="b624fe69-b73d-41f0-b726-87ce5f844293"/>
-            </line>
-            <textField>
-                <reportElement x="160" y="70" width="340" height="21" uuid="943c65aa-6474-441b-90e3-192ea91f2716">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffcb885-8b40-4660-bbd3-d1d3eb3f5af2"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{nomPrenomPere}]]></textFieldExpression>
-            </textField>
-        </band>
-    </detail>
-    <columnFooter>
-        <band height="46" splitType="Stretch">
-            <staticText>
-                <reportElement x="0" y="30" width="300" height="16" uuid="477cf1d8-6005-4a2f-89f0-148fb8c358d9">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84e2f5a6-8516-4f75-8f26-fbc5c0b5c446"/>
-                </reportElement>
-                <textElement>
-                    <font size="12"/>
-                </textElement>
-                <text><![CDATA[nom et prenom de la mere]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="160" y="20" width="340" height="25" uuid="afb46ea8-12e1-4f3f-b3d1-e5e3a52ae054">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84e2f5a6-8516-4f75-8f26-fbc5c0b5c446"/>
-                </reportElement>
-                <textElement>
-                    <font size="13"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{nomPrenomMere}]]></textFieldExpression>
-            </textField>
-        </band>
-    </columnFooter>
-    <pageFooter>
-        <band height="72" splitType="Stretch">
-            <line>
-                <reportElement x="140" y="0" width="415" height="1" uuid="6aef3e56-c7d3-4951-a154-96e73c9b0d64"/>
-            </line>
-            <line>
-                <reportElement x="-20" y="54" width="595" height="1" uuid="b91ec692-6b00-4cc8-84a4-a3c3e13b04e6"/>
-            </line>
-            <staticText>
-                <reportElement x="0" y="54" width="256" height="18" uuid="75680fd9-1b10-427a-b792-8d48613e28f6"/>
-                <textElement>
-                    <font size="8"/>
-                </textElement>
-                <text><![CDATA[Ce présent document est certifié et revient à qui de droit.]]></text>
-            </staticText>
-        </band>
-    </pageFooter>
-    <summary>
-        <band height="1" splitType="Stretch"/>
-    </summary>
+	<field name="dateNaissance" class="java.lang.String"/>
+	<field name="lieuNaissance" class="java.lang.String"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="nomPrenomMere" class="java.lang.String"/>
+	<field name="nomPrenomPere" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="prenom" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="210" height="20" uuid="1cee0595-9b49-4dfe-9e17-e3f984460452"/>
+				<textElement>
+					<font fontName="SansSerif" size="16"/>
+				</textElement>
+				<text><![CDATA[CONSULAT GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="0" width="200" height="20" uuid="73fff547-5822-4a85-910a-8a25b2278f29"/>
+				<textElement>
+					<font fontName="SansSerif" size="16"/>
+				</textElement>
+				<text><![CDATA[CONSULATE GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="259" height="26" uuid="a539c91a-d62d-416a-9307-28d6596bb0af"/>
+				<textElement>
+					<font fontName="SansSerif" size="16"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE DU CAMEROUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="20" width="230" height="26" uuid="d10a8358-1e28-4b6c-a199-e5d3462a3e92"/>
+				<textElement>
+					<font fontName="SansSerif" size="16"/>
+				</textElement>
+				<text><![CDATA[REPUBLIC OF CAMEROUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="80" width="236" height="30" uuid="f1cac860-be1e-4cd0-8305-d6815b0e38f0"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTE DE NAISSANCE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="91" width="19" height="19" uuid="e24dbd5c-85d1-4e9f-99cd-e7a2933e85eb"/>
+				<text><![CDATA[N : ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="439" y="100" width="80" height="1" uuid="2ed3d661-919b-4043-91e7-39dea194e60f"/>
+			</line>
+			<textField>
+				<reportElement x="448" y="87" width="69" height="19" uuid="d921faed-1f17-4dd4-836a-8f26fe68afea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8fd6f890-e65b-4069-bd6c-41e95eed599c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="128" width="38" height="21" uuid="bf2c9fac-4e8b-4d0d-a52c-f3fdabd0bd10">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2028b5f6-4c96-47d3-ace3-aa6b251f8d6e"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[nom]]></text>
+			</staticText>
+			<line>
+				<reportElement x="38" y="141" width="515" height="1" uuid="3f3efce3-7a03-4241-b3d9-c31c56cf8aa6"/>
+			</line>
+			<textField>
+				<reportElement x="50" y="124" width="350" height="18" uuid="dcca673b-f173-4d81-af71-3acfc46a8b98">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2028b5f6-4c96-47d3-ace3-aa6b251f8d6e"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="252" y="10" width="50" height="50" uuid="4f09bd9c-8ce4-4b16-8015-d14aba413635"/>
+				<imageExpression><![CDATA["http://afrinnov.xyz/wp-content/uploads/2016/05/logoafrinnov-1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-19" width="44" height="19" uuid="e6a12fbc-97ee-44ba-93a6-c5903b89bcb4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd702f4e-3280-41d2-9a32-02f124c6e166"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[prenom]]></text>
+			</staticText>
+			<line>
+				<reportElement x="45" y="0" width="509" height="1" uuid="b526a31f-df34-420c-bc08-32cb05e4deb0"/>
+			</line>
+			<textField>
+				<reportElement x="50" y="-18" width="378" height="19" uuid="93229ff5-ba27-455d-954d-fc28b2ae747a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd702f4e-3280-41d2-9a32-02f124c6e166"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="32" width="100" height="20" uuid="22f8689f-7fc5-49a0-9c67-7ae603b2690e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="612b83bf-0597-4326-8783-9db19b74c811"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[date de naissance]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="17" width="100" height="20" uuid="c8cb5a2a-ef4f-4400-a4cb-28b0c6adcbbb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f12cfc85-48ba-484f-b8a3-0fb259a58525"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[lieu de naissance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="75" width="129" height="16" uuid="2cef230c-3379-4f71-b7f8-a5fabb265d42">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffcb885-8b40-4660-bbd3-d1d3eb3f5af2"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[nom et prenom du pere]]></text>
+			</staticText>
+			<line>
+				<reportElement x="100" y="-1" width="453" height="1" uuid="25a4c78e-94de-4380-92af-e51d4a71cc8a"/>
+			</line>
+			<textField>
+				<reportElement x="109" y="-20" width="330" height="19" uuid="8988476b-fbad-4388-9065-be28acb99013">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="612b83bf-0597-4326-8783-9db19b74c811"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateNaissance}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="100" y="37" width="455" height="1" uuid="b2eacf22-2e6e-4e2a-bf39-85e2d1458548"/>
+			</line>
+			<textField>
+				<reportElement x="110" y="17" width="120" height="19" uuid="d81eb69f-c3b6-4bc4-a925-fb116004fe5c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f12cfc85-48ba-484f-b8a3-0fb259a58525"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lieuNaissance}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="130" y="91" width="424" height="1" uuid="b624fe69-b73d-41f0-b726-87ce5f844293"/>
+			</line>
+			<textField>
+				<reportElement x="160" y="70" width="340" height="21" uuid="943c65aa-6474-441b-90e3-192ea91f2716">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffcb885-8b40-4660-bbd3-d1d3eb3f5af2"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomPrenomPere}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="300" height="16" uuid="477cf1d8-6005-4a2f-89f0-148fb8c358d9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84e2f5a6-8516-4f75-8f26-fbc5c0b5c446"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[nom et prenom de la mere]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="20" width="340" height="25" uuid="afb46ea8-12e1-4f3f-b3d1-e5e3a52ae054">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84e2f5a6-8516-4f75-8f26-fbc5c0b5c446"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomPrenomMere}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="72" splitType="Stretch">
+			<line>
+				<reportElement x="140" y="0" width="415" height="1" uuid="6aef3e56-c7d3-4951-a154-96e73c9b0d64"/>
+			</line>
+			<line>
+				<reportElement x="-20" y="54" width="595" height="1" uuid="b91ec692-6b00-4cc8-84a4-a3c3e13b04e6"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="54" width="256" height="18" uuid="75680fd9-1b10-427a-b792-8d48613e28f6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ce présent document est certifié et revient à qui de droit.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
 </jasperReport>

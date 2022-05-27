@@ -2,15 +2,9 @@ package org.isj.ing.annuarium.webapp.presentation.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.isj.ing.annuarium.webapp.model.dto.ActeDto;
-import org.isj.ing.annuarium.webapp.model.entities.User;
-import org.isj.ing.annuarium.webapp.service.IActe;
-import org.isj.ing.annuarium.webapp.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,78 +25,47 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 @Slf4j
-public class ActeController {
+public class ActeController extends AbstractController {
 
-	@Autowired
-	IActe iActe;
-
-	@Autowired
-	UserService userService;
 
 	@GetMapping("/")
 	public String pageAccueil(Model model) {
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
-
+		getInfoUser(model);
 		return "index";
 	}
 	@GetMapping("/listactes")
 	public String pageListActes(Model model) {
-		//appel de la couche service pour avoir la liste des actes
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+
+		//getInfoUser(model);
+
 		List<ActeDto> acteDtos = iActe.listActes();
 		model.addAttribute("acteDtos", acteDtos);
 		return "liste";
 	}
 	@GetMapping("/detail")
 	public String pageDetail(@RequestParam(name = "numero") String numero,Model model) { //vient a l'examen
-		//appel de la couche service pour avoir l'acte
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+
+		getInfoUser(model);
+
 		ActeDto acteDto = iActe.searchActeByNumero(numero);
 		model.addAttribute("acteDto", acteDto);// c'est cette cle quon utilise pour recuperer l'objet
 		return "details";
 	}
 	@GetMapping("/supprimer")
 	public String pageSupprimer(@RequestParam(name = "numero") String numero,Model model) { //vient a l'examen
-		//appel de la couche service pour avoir l'acte
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
-		iActe.deleteActe(numero);
 
+		getInfoUser(model);
+		iActe.deleteActe(numero);
 		return "redirect:/listactes";
 	}
+
 	@GetMapping("/enregistreracteform")
 	public String enregistrerActeForm(Model model) { //vient a l'examen
-		//affichage du formulaire
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		   // getInfoUser(model);
 			ActeDto acteDto = new ActeDto();
 			acteDto.setNumero("CM");
 			model.addAttribute("acteDto",acteDto);
@@ -113,13 +76,7 @@ public class ActeController {
 	public String enregistrerActe(@ModelAttribute ActeDto acteDto, Model model){
 
 		ActeController.log.info("enregistrer-acte");
-		// appel de la couche service ou metier injectée pour enregistrer un materiel
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		getInfoUser(model);
 		iActe.saveActe(acteDto);
 
 		return "redirect:/listactes";
@@ -127,13 +84,7 @@ public class ActeController {
 
 	@GetMapping("/searchacteform")
 	public String searchActeform(Model model) {
-		//appel de la couche service pour avoir la liste des actes
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		//getInfoUser(model);
 		List<ActeDto> acteDtos = iActe.listActes();
 		model.addAttribute("acteDtos", acteDtos);
 		return "rechercher";
@@ -142,13 +93,7 @@ public class ActeController {
 	public String searchActe(@RequestParam(name = "motcle") String motcle ,Model model){
 
 		ActeController.log.info("enregistrer-acte");
-		// appel de la couche service ou metier injectée pour enregistrer un materiel
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		//getInfoUser(model);
 		List<ActeDto> acteDtos = iActe.searchActesBYkeyword(motcle);
 		model.addAttribute("acteDtos", acteDtos);
 		return "rechercher";
@@ -156,13 +101,7 @@ public class ActeController {
 
 	@GetMapping("/editerform")
 	public String editerActeForm(@RequestParam(name = "numero") String numero,Model model) { //vient a l'examen
-		//affichage du formulaire d'edition d'un acte
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		//getInfoUser(model);
 		ActeDto acteDto = iActe.searchActeByNumero(numero);
 		model.addAttribute("acteDto",acteDto);
 		return "editer";
@@ -172,12 +111,7 @@ public class ActeController {
 	public String editerActe(@ModelAttribute ActeDto acteDto, Model model){
 
 		ActeController.log.info("editeracte");
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		final User user = userService.findUserByEmail(auth.getName());
-		if(user!= null )
-			model.addAttribute("userName", user.getName() + " " + user.getLastName());
-		else
-			model.addAttribute("");
+		//getInfoUser(model);
 		iActe.updateActe(acteDto);
 		return "redirect:/listactes";
 	}

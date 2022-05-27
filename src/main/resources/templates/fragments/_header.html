@@ -50,7 +50,8 @@
                                                     </div>
                                                 </div>
                                                 <div sec:authorize="isAuthenticated()" class="flex-grow-1">
-                                                    <span class="fw-semibold d-block" th:text="${userName} ">Richelle Mayap</span>
+<!--                                                    <span class="fw-semibold d-block" th:text="${userName} ">Richelle Mayap</span>-->
+                                                    <span class="fw-semibold d-block" th:text="${session.userName} ">Richelle Mayap</span>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
                                                 <div sec:authorize="!isAuthenticated()" class="flex-grow-1">

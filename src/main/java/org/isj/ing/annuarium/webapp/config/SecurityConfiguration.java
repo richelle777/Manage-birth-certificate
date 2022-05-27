@@ -53,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/admin/**").hasAuthority("ADMIN")//pout toutes les routes qui commencent par admin ils doivent avoir le role
 		.anyRequest().authenticated().and().csrf().disable().formLogin()
 		.loginPage("/login").failureUrl("/login?error=true")//login par defaut et permet et permet d'afficher l'erreur en cas d'erreu
-		.defaultSuccessUrl("/")//permet de renvoyer l'user a une autre page quand il s'authentifie
+		.defaultSuccessUrl("/listactes")//permet de renvoyer l'user a une autre page quand il s'authentifie
 		.usernameParameter("email")
 		.passwordParameter("password")
 		.and().logout()

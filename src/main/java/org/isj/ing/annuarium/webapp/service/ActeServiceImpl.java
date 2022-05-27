@@ -84,6 +84,8 @@ public class ActeServiceImpl implements IActe{
         //load file and compile it
         //File file = ResourceUtils.getFile("src/main/resources/actepdf.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream("src/main/resources/actepdf.jrxml"));
+        // donne la source de donnée
+
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(actes);
         Map<String , Object> parameters = new HashMap<>();
         parameters.put("createBy" , "java Techie");
