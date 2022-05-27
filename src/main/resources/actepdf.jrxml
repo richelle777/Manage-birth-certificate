@@ -1,62 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="520" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c88d071-e5f9-4150-bcc3-1b98f62d113b">
-<!--    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>-->
-<!--    <property name="com.jaspersoft.studio.data.defaultdataadapter" value=" mysql localhost"/>-->
-<!--    <queryString language="SQL">-->
-<!--        <![CDATA[select * from bdannuarium.acte]]>-->
-<!--    </queryString>-->
-<!--    <field name="id" class="java.lang.Long">-->
-<!--&lt;!&ndash;        <property name="com.jaspersoft.studio.field.name" value="id"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="com.jaspersoft.studio.field.label" value="id"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <fieldDescription><![CDATA[]]></fieldDescription>&ndash;&gt;-->
-<!--    </field>-->
+
     <field name="dateNaissance" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="date_naissance"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="date_naissance"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="lieuNaissance" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="lieu_naissance"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="lieu_naissance"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="nom" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="nom"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="nom"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="nomPrenomMere" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="nom_prenom_mere"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="nom_prenom_mere"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="nomPrenomPere" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="nom_prenom_pere"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="nom_prenom_pere"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="numero" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="numero"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="numero"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
     <field name="prenom" class="java.lang.String">
-<!--        <property name="com.jaspersoft.studio.field.name" value="prenom"/>-->
-<!--        <property name="com.jaspersoft.studio.field.label" value="prenom"/>-->
-<!--        <property name="com.jaspersoft.studio.field.tree.path" value="acte"/>-->
-<!--        <fieldDescription><![CDATA[]]></fieldDescription>-->
     </field>
-<!--    <group name="id">-->
-<!--        <groupExpression><![CDATA[$F{id}]]></groupExpression>-->
-<!--    </group>-->
+
     <background>
         <band splitType="Stretch"/>
     </background>
