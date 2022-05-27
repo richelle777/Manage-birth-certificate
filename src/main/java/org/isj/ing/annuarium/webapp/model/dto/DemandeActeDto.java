@@ -1,5 +1,4 @@
 package org.isj.ing.annuarium.webapp.model.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ActeDto {
+public class DemandeActeDto {
     //les champs qui sont dans le dto sont l'image des champs de l'acte sans rien ajouter
     private String numero;
     private String nom;
@@ -21,5 +20,4 @@ public class ActeDto {
     private String lieuNaissance;
     private String nomPrenomPere;
     private String nomPrenomMere;
-
 }

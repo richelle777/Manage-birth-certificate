@@ -27,5 +27,4 @@ public class Acte {
     private String nomPrenomPere;
     private String nomPrenomMere;
 
-
 }

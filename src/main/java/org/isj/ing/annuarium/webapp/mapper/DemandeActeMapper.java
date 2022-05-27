@@ -2,16 +2,17 @@ package org.isj.ing.annuarium.webapp.mapper;
 
 
 import org.isj.ing.annuarium.webapp.model.dto.ActeDto;
+import org.isj.ing.annuarium.webapp.model.dto.DemandeActeDto;
 import org.isj.ing.annuarium.webapp.model.entities.Acte;
 import org.isj.ing.annuarium.webapp.model.entities.DemandeActe;
 import org.mapstruct.*;
 
 @Mapper(componentModel = "spring",nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy =  NullValueCheckStrategy.ALWAYS)
-public interface ActeMapper {
+public interface DemandeActeMapper {
 
-    Acte toEntity(ActeDto acteDTO);
+    DemandeActe toEntity(DemandeActeDto demandeActeDto);
 
-    ActeDto toDto(Acte acte);
+    DemandeActeDto toDto(DemandeActe demandeActe);
 
-    void copy(ActeDto acteDTO, @MappingTarget Acte acte);
+    void copy(DemandeActeDto demandeActeDto, @MappingTarget DemandeActe demandeActe);
 }

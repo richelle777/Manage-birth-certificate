@@ -48,11 +48,11 @@
                                     <li><span class="pro-title"> Prénom </span> <span class="pro-detail" th:text="${acteDto.prenom}" >Saulnier</span></li>
                                     <li><span class="pro-title"> Date de naissance </span> <span class="pro-detail" th:text="${acteDto.dateNaissance}" >25/01/2000</span></li>
                                     <li><span class="pro-title"> Lieu de naissance </span> <span class="pro-detail" th:text="${acteDto.lieuNaissance}" >Yaoundé</span></li>
-                                    <li><span class="pro-title"> Nom et Prénom du père </span> <span class="pro-detail" th:text="${acteDto.nomPrenomPere}">Nkot</span></li>
-                                    <li><span class="pro-title"> Nom et Prénom de la mère</span> <span class="pro-detail" th:text="${acteDto.nomPrenomMere}">Honoré</span></li>
+                                    <li><span class="pro-title"> Nom et Prénom du père </span> <span class="pro-detail" th:text="${acteDto.nomPrenomPere}">Touta</span></li>
+                                    <li><span class="pro-title"> Nom et Prénom de la mère</span> <span class="pro-detail" th:text="${acteDto.nomPrenomMere}">Robin</span></li>
                                 </ul>
                             </div>
-                            <a href="#" class="btn btn-common bg-success"><i class="ri-printer-fill"></i> Telecharger</a>
+                            <a th:href="@{'/report?numero=' + ${acteDto.numero}}" class="btn btn-common bg-success"><i class="ri-printer-fill"></i> Telecharger</a>
                             <!-- <button type="button" class="btn btn-common" data-toggle="modal" data-target="#myModal"> <i class="ri-remote-control-2-fill"></i> Modifier</button> -->
                             <!-- <a href="#" class="btn btn-danger"><i class="ri-delete-bin-3-fill"></i> Supprimer</a> -->
                         </div>

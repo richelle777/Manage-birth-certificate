@@ -1,7 +1,8 @@
-package org.isj.ing.annuarium.webapp.model.dto;
+package org.isj.ing.annuarium.webapp.model.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -12,8 +13,12 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ActeDto {
-    //les champs qui sont dans le dto sont l'image des champs de l'acte sans rien ajouter
+@Entity
+public class DemandeActe {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)//correspondent uniquement a l'id
+    private Long id;
+
     private String numero;
     private String nom;
     private String prenom;
@@ -21,5 +26,4 @@ public class ActeDto {
     private String lieuNaissance;
     private String nomPrenomPere;
     private String nomPrenomMere;
-
 }

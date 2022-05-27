@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
   <th:block th:replace="fragments/_head.html::head"></th:block>
@@ -53,8 +53,8 @@
                             <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p-->
                             <div class="social">
                                 <a th:href="@{'/detail?numero=' + ${acteDto.numero}}" class=" bg-success" title="details"><i class="ri-eye-line"></i></a>
-                                <a th:href="@{'/editeracteform?numero=' + ${acteDto.numero}}"><i class="ri-edit-box-fill" title="editer"></i></a>
-                                <a th:href="@{'/supprimer?numero=' + ${acteDto.numero}}" class=" bg-danger"><i class="ri-delete-bin-3-fill" title="supprimer"></i></a>
+                                <a sec:authorize="isAuthenticated()" th:href="@{'/editerform?numero=' + ${acteDto.numero}}"><i class="ri-edit-box-fill" title="editer"></i></a>
+                                <a sec:authorize="isAuthenticated()" th:href="@{'/supprimer?numero=' + ${acteDto.numero}}" class=" bg-danger"><i class="ri-delete-bin-3-fill" title="supprimer"></i></a>
                             </div>
                           </div>
                         </div>

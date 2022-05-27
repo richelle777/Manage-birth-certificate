@@ -1,5 +1,7 @@
 package org.isj.ing.annuarium.webapp.service;
 
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.isj.ing.annuarium.webapp.mapper.ActeMapper;
 import org.isj.ing.annuarium.webapp.model.dto.ActeDto;
 import org.isj.ing.annuarium.webapp.model.entities.Acte;
@@ -7,8 +9,12 @@ import org.isj.ing.annuarium.webapp.repository.ActeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 @Service
 public class ActeServiceImpl implements IActe{
@@ -59,5 +65,31 @@ public class ActeServiceImpl implements IActe{
 //               .map(acte -> acteMapper.toDto(acte))
                 .map(acteMapper::toDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ActeDto updateActe(ActeDto acteDto) {
+        //recherche l'entitite qui correspond a l'acte que nous rechercons
+        //update
+        Acte acte = acteRepository.findActeByNumero(acteDto.getNumero()).get();
+        acteMapper.copy(acteDto,acte);
+        return acteMapper.toDto(acteRepository.save(acte));
+
+    }
+
+    @Override
+    public byte[] exportReport (ActeDto acteDto) throws FileNotFoundException, JRException {
+        List<ActeDto> actes = new ArrayList<>();
+        actes.add(acteDto);
+        //load file and compile it
+        //File file = ResourceUtils.getFile("src/main/resources/actepdf.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream("src/main/resources/actepdf.jrxml"));
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(actes);
+        Map<String , Object> parameters = new HashMap<>();
+        parameters.put("createBy" , "java Techie");
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport , parameters , dataSource);
+        byte[] data = JasperExportManager.exportReportToPdf(jasperPrint);
+
+        return data;
     }
 }
